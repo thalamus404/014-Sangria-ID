@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Sangira-Brüder e.V.</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("i5cT3NSWii6jDBbOt"); // Public Key (User ID)
+        })();
+    </script>
+    <script type="text/javascript">
+        function sendMail() {
+            var templateParams = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                location: document.getElementById('location').value,
+                position: document.getElementById('position').value,
+                phoneNumber: document.getElementById('phoneNumber').value,
+                birthDate: document.getElementById('birthDate').value,
+                sex: document.getElementById('sex').value,
+                height: document.getElementById('height').value,
+                hairColor: document.getElementById('hairColor').value,
+                eyeColor: document.getElementById('eyeColor').value,
+                favoriteDrink: document.getElementById('favoriteDrink').value,
+                hatedDrink: document.getElementById('hatedDrink').value,
+                recruitedBy: document.getElementById('recruitedBy').value,
+                sendDate: new Date().toLocaleDateString() // Aktuelles Datum
+            };
+            
+            emailjs.send('service_e6kf1pv', 'template_ne8y4we', templateParams) // Ersetze template_ne8y4we durch deine tatsächliche Template ID
+                .then(function(response) {
+                    alert('Registration successfully sent!', response.status, response.text);
+                }, function(error) {
+                    alert('Error sending registration...', error);
+                });
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h1>Registration - Sangira-Brüder e.V.</h1>
+    <form onsubmit="return sendMail();">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        
+        <label for="location">Location:</label>
+        <select id="location" name="location" required>
+            <option value="Grünheide">Grünheide</option>
+            <option value="Strausberg">Strausberg</option>
+            <option value="Rehfelde">Rehfelde</option>
+            <option value="Neuenhagen">Neuenhagen</option>
+            <option value="Rahnsdorf">Rahnsdorf</option>
+            <option value="Friedrichshagen">Friedrichshagen</option>
+            <option value="Woltersdorf">Woltersdorf</option>
+            <option value="Schöneiche">Schöneiche</option>
+            <option value="Hoppegarten">Hoppegarten</option>
+            <option value="Berlin">Berlin</option>
+            <option value="Wilhelmshagen">Wilhelmshagen</option>
+            <option value="Erkner">Erkner</option>
+            <option value="Köpenick">Köpenick</option>
+            <option value="Other">Other</option>
+        </select>
+        
+        <label for="position">Position / Rank:</label>
+        <input type="text" id="position" name="position" required>
+        
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+        
+        <label for="birthDate">Birth Date:</label>
+        <input type="text" id="birthDate" name="birthDate" required>
+        
+        <label for="sex">Sex:</label>
+        <select id="sex" name="sex" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="diverse">Diverse</option>
+            <option value="Yes">Yes</option>
+            <option value="After Marriage†">After Marriage†</option>
+        </select>
+        
+        <label for="height">Height in cm:</label>
+        <input type="text" id="height" name="height" required>
+        
+        <label for="hairColor">Hair Color:</label>
+        <select id="hairColor" name="hairColor" required>
+            <option value="Blonde">Blonde (yes, also dark blonde)</option>
+            <option value="Brown">Brown</option>
+            <option value="Black">Black</option>
+            <option value="Red">Red</option>
+            <option value="Gray">Gray</option>
+            <option value="White">White</option>
+            <option value="FullyDyed">Fully Dyed</option>
+            <option value="Other">Other</option>
+        </select>
+        
+        <label for="eyeColor">Eye Color:</label>
+        <select id="eyeColor" name="eyeColor" required>
+            <option value="Green">Green</option>
+            <option value="Brown">Brown</option>
+            <option value="Blue">Blue</option>
+            <option value="Gray">Gray</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Red">Red</option>
+            <option value="Other">Other</option>
+        </select>
+        
+        <label for="favoriteDrink">Favorite Drink:</label>
+        <input type="text" id="favoriteDrink" name="favoriteDrink" required>
+        
+        <label for="hatedDrink">Hated Drink:</label>
+        <input type="text" id="hatedDrink" name="hatedDrink" required>
+        
+        <label for="recruitedBy">Recruited By:</label>
+        <input type="text" id="recruitedBy" name="recruitedBy" required>
+        
+        <button type="submit">Register</button>
+    </form>
+
+    <h4>Please send your desired Pass-Photo to +49 151 4434 7235 (Silas)</h4>
+    <p>Example:</p>
+    <img src="example.png">
+</body>
+</html>
