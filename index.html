@@ -38,10 +38,22 @@
                 });
             return false;
         }
+
+        function toggleInfoBox() {
+            var infoBoxContent = document.getElementById('info-box-content');
+            if (infoBoxContent.style.display === 'none' || infoBoxContent.style.display === '') {
+                infoBoxContent.style.display = 'block';
+            } else {
+                infoBoxContent.style.display = 'none';
+            }
+        }
     </script>
 </head>
 <body>
     <h1>Registration - Sangira-Brüder e.V.</h1>
+    <div class="welcome-message">
+        Es sieht so aus, als hättest du deine Taufe vollbracht und wurdest offizielle in die Sangria-Brüder aufgenommen. Nun müssen wir noch einige Formalitäten klären. Bitte fülle alle Felder aus, um deine Mitgliedskarte zu erhalten und somit die Möglichkeit zu bekommen, neue Mitglieder zu rekrutieren und die Punkte dafür zu erhalten.
+    </div>
     <form onsubmit="return sendMail();">
         <label for="firstName">First Name:</label>
         <input type="text" id="firstName" name="firstName" required>
@@ -68,10 +80,71 @@
         </select>
         
         <label for="position">Position / Rank:</label>
-        <input type="text" id="position" name="position" required>
+        <div class="info-box">
+            <input type="text" id="position" name="position" required>
+            <a onclick="toggleInfoBox()">Bist Planlos? - Hier gibts etwas Inspiration</a>
+            <div id="info-box-content" class="info-box-content">
+                Mögliche Titel:<br>
+                <b>Akademisch</b><br>
+                1. Professor<br>
+                2. Dekan<br>
+                3. Rektor<br>
+                4. Juniorprofessor<br>
+                5. Akademischer Rat<br>
+                6. Doktorand<br>
+                7. Forschungsleiter<br>
+                8. Emeritus<br>
+                9. Studiendekan<br>
+                10. Bibliothekar<br>
+                <b>Militär</b><br>
+                1. General<br>
+                2. Oberst<br>
+                3. Major<br>
+                4. Leutnant<br>
+                5. Feldwebel<br>
+                6. Korporal<br>
+                7. Stabschef<br>
+                8. Brigadegeneral<br>
+                9. Oberfeldwebel<br>
+                10. Flottillenadmiral<br>
+                <b>Monarchisch</b><br>
+                1. König<br>
+                2. Königin<br>
+                3. Prinz<br>
+                4. Prinzessin<br>
+                5. Herzog<br>
+                6. Herzogin<br>
+                7. Graf<br>
+                8. Gräfin<br>
+                9. Baron<br>
+                10. Baronesse<br>
+                <b>Firma</b><br>
+                1. Geschäftsführer<br>
+                2. Vorstandsvorsitzender<br>
+                3. Bereichsleiter<br>
+                4. Abteilungsleiter<br>
+                5. Teamleiter<br>
+                6. Projektleiter<br>
+                7. Hauptgeschäftsführer<br>
+                8. Marketingdirektor<br>
+                9. Finanzvorstand<br>
+                10. Personalchef<br>
+                <b>Misc.</b><br>
+                1. Meister<br>
+                2. Ratsherr<br>
+                3. Kanzler<br>
+                4. Direktor<br>
+                5. Architekt<br>
+                6. Chefredakteur<br>
+                7. Schatzmeister<br>
+                8. Intendant<br>
+                9. Kurator<br>
+                10. Botschafter
+            </div>
+        </div>
         
         <label for="phoneNumber">Phone Number:</label>
-        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Format: +49 1XX XXXXXXXX" required>
         
         <label for="birthDate">Birth Date:</label>
         <input type="text" id="birthDate" name="birthDate" required>
@@ -123,8 +196,12 @@
         <button type="submit">Register</button>
     </form>
 
-    <h4>Please send your desired Pass-Photo to +49 151 4434 7235 (Silas)</h4>
-    <p>Example:</p>
-    <img src="example.png">
+    <div class="preview-section">
+        <h4>Please send your desired Pass-Photo to +49 151 4434 7235 (Silas)</h4>
+        <p>Example:</p>
+        <img src="example.png" alt="Example Photo">
+        <p>Your Sangria ID:</p>
+        <img src="FinalSangriaID.png" alt="Sangria ID">
+    </div>
 </body>
 </html>
