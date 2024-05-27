@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
 }
@@ -13,7 +13,7 @@ body {
 h1 {
     text-align: center;
     color: #444;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 form {
@@ -21,10 +21,10 @@ form {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
     max-width: 500px;
-    width: 90%;
     box-sizing: border-box;
-    margin: 20px;
+    margin-bottom: 20px;
 }
 
 label {
@@ -60,20 +60,19 @@ button:hover {
     background-color: #45a049;
 }
 
-h4 {
-    margin-top: 20px;
+h4, p {
     color: #888;
     text-align: center;
+    margin: 10px 0;
 }
 
 p {
-    text-align: center;
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 img {
     display: block;
-    margin: 10px auto;
+    margin: 0 auto 20px;
     max-width: 100%;
     height: auto;
     border: 1px solid #ccc;
@@ -89,7 +88,7 @@ img {
 
     h1 {
         font-size: 24px;
-        margin-bottom: 15px;
+        margin: 15px 0;
     }
 
     label {
