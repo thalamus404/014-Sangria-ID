@@ -1,5 +1,5 @@
 body {
-    font-family: "Arial Narrow", bold;
+    font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     color: #333;
     margin: 0;
@@ -7,12 +7,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 h1 {
     text-align: center;
     color: #444;
+    margin-bottom: 20px;
 }
 
 form {
@@ -21,7 +22,9 @@ form {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 500px;
-    width: 100%;
+    width: 90%;
+    box-sizing: border-box;
+    margin: 20px;
 }
 
 label {
@@ -43,13 +46,14 @@ select {
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     background-color: #4CAF50;
     border: none;
     border-radius: 5px;
     color: white;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -64,6 +68,7 @@ h4 {
 
 p {
     text-align: center;
+    margin-top: 10px;
 }
 
 img {
@@ -73,4 +78,32 @@ img {
     height: auto;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    select,
+    button {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 12px;
+    }
 }
